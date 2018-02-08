@@ -1,0 +1,113 @@
+body {
+  box-sizing: border-box;
+  background: white;
+  font-family: Roboto, sans-serif;
+  color: black;
+}
+
+.error{
+  box-shadow: inset 0 0 10px red;
+  -webkit-box-shadow: inset 0 0 10px red;
+  -o-box-shadow: inset 0 0 10px red;
+  border: 1px solid red;
+}
+
+.success{
+    box-shadow: inset 0 0 10px green;
+    -webkit-box-shadow: inset 0 0 10px green;
+    -o-box-shadow: inset 0 0 10px green;
+    border: 1px solid green;
+}
+
+nav{
+    background-color: transparent !important;
+    background-image: none;
+    box-shadow: none;
+    font-size: 1.5em;
+    border: 0 transparent !important;
+}
+
+#templates{
+    align-items: center;
+    text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+
+    #templates .title{
+        font: small-caps 500 4em/1em Roboto, sans-serif;
+    }
+
+    #episodesContainer>div:nth-child(2)>div:nth-child(2), #showLists>div:nth-child(2){
+        text-align: right;
+    }
+
+    #showLists>div:nth-of-type(odd){
+        text-align: left;
+    }
+
+    #showLists>div:nth-child(1){
+        font: 300 2em/1em Helvetica, sans-serif;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+
+    #templates .title{
+        font: small-caps 300 15px Roboto, sans-serif;
+    }
+
+    #episodesContainer>div:nth-child(2)>div:nth-child(4){
+        display: none;
+    }
+
+    #episodesContainer>div:nth-child(2)>div:nth-child(2), #showLists>div{
+        text-align: left;
+    }
+
+    #showLists>div:nth-child(1){
+        font: 200 1em/1em Helvetica, sans-serif;
+    }
+
+}
+
+#detailView{
+    padding-top: 10px;
+}
+
+#episodesContainer{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+#summaryContainer{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#episodesContainer>div:nth-child(2)>div:nth-child(4){
+    font: 13px Helvetica, sans-serif;
+}
+
+#episodesContainer>div:nth-child(2)>div:nth-child(4), #episodesContainer>div:nth-child(2)>div:nth-child(odd){
+    text-align: left;
+}
+#episodesContainer>div:nth-child(2)>div:nth-child(3)>span, #showOverview>div:nth-child(2)>span:nth-child(4)>span{
+    padding-left: 10px;
+}
+
+#showLists>div:nth-child(3){
+    border: 2px solid blue;
+    padding: 2px;
+}
+
+.glyphicon{
+    color: red;
+}
+
+a{
+  color: #00B7FF;
+}

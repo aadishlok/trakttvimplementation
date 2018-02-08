@@ -1,0 +1,35 @@
+<div class="container">
+    <span class="title">{{headline}}</span>
+    <div class="row">
+        <span><h4>{{tagline}}</h4></span>
+    </div>
+    <div class="row" ng-show="tokenCheck">
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label for="code" class="col-sm-2 control-label">Trakt Code</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="code" placeholder="Code" ng-model="code">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="button" class="btn btn-default" ng-click="authorize(code)">SUBMIT</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="row" ng-hide="tokenCheck">
+        <span class="title">TRENDING</span>
+    </div>
+    <div ng-repeat="show in trending" ng-hide="tokenCheck">
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 text-center">
+            <div class="thumbnail">
+                <a ng-href="#!/details" ng-click="redirectToDetails(show)"><img class="img-responsive" src="{{show.imageUrl}}" alt="Image"></a>
+                <div class="caption">
+                    <h3>{{show.title}}</h3>
+                    <p>{{show.year}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

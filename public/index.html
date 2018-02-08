@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="bovcontrol">
+<head>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <!--BOOTSTRAP -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!--ANGULAR -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-animate.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-sanitize.js"></script>
+
+    <!--LOCAL -->
+    <script src="javascripts/ui-bootstrap-tpls-2.5.0.min.js"></script>
+    <script src="/views/app.js"></script>
+    <script src="/views/config.js"></script>
+    <script src="/views/Home/controller/home.controller.client.js"></script>
+    <script src="/views/Search/controller/search.controller.client.js"></script>
+    <script src="/views/Detail/controller/detail.controller.client.js"></script>
+    <script src="/views/index.controller.client.js"></script>
+
+    <script src="/services/search.service.client.js"></script>
+    <script src="/services/detail.service.client.js"></script>
+    <script src="/services/home.service.client.js"></script>
+    <script src="/services/trakt.auth.service.client.js"></script>
+
+    <link rel="stylesheet" href="/stylesheets/style.css">
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta charset="UTF-8">
+    <title>BovControl Assessment</title>
+</head>
+<body class="container-fluid">
+
+    <div class="section container" id="header" ng-controller="IndexController">
+        <nav class="navbar navbar-static-top">
+            <a class="navbar-brand" href="#!/">HOME</a>
+
+            <form class="navbar-form">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="search" placeholder="Search.." ng-model="searchString">
+                </div>
+                <button type="button" class="btn btn-default" ng-click="search('/search',searchString)" ng-show="searchString.length >= 3 && searchButton">Search</button>
+            </form>
+
+        </nav>
+    </div>
+
+    <div class="container">
+        <div class="section" ng-view id="templates"></div>
+    </div>
+
+    <div class="section" id="footer">
+
+    </div>
+
+</body>
+</html>
